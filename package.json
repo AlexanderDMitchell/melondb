@@ -1,10 +1,10 @@
 {
-  "name": "melon-db",
+  "name": "@alexmitchell/melondb",
   "version": "0.1.0",
   "private": false,
   "description": "Typed helpers for WatermelonDB: less write() boilerplate, safer collection access, safer database resets.",
   "license": "MIT",
-  "author": "Alzen",
+  "author": "Alex Mitchell",
   "keywords": [
     "watermelondb",
     "react-native",
@@ -16,12 +16,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alzenware/melon-db.git"
+    "url": "git+https://github.com/AlexanderDMitchell/melondb.git"
   },
   "bugs": {
-    "url": "https://github.com/alzenware/melon-db/issues"
+    "url": "https://github.com/AlexanderDMitchell/melondb/issues"
   },
-  "homepage": "https://github.com/alzenware/melon-db#readme",
+  "homepage": "https://github.com/AlexanderDMitchell/melondb#readme",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "react-native": "./src/index.ts",

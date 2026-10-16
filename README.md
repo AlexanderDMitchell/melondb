@@ -9,11 +9,11 @@ MelonDB is WatermelonDB but more DRY. WatermelonDB is excellent for building off
 ## Install
 
 ```bash
-npm install melon-db @nozbe/watermelondb
+npm install @alexmitchell/melondb @nozbe/watermelondb
 ```
 
 ```bash
-yarn add melon-db @nozbe/watermelondb
+yarn add @alexmitchell/melondb @nozbe/watermelondb
 ```
 
 `@nozbe/watermelondb` (>= 0.27) and `react` (>= 18) are **peer dependencies**: MelonDB uses your app's copy rather than bundling its own. If you've already set up WatermelonDB you have both.
@@ -92,7 +92,7 @@ const noteSchema = tableSchema({
 Then register your tables once in the app-wide configuration:
 
 ```ts
-import { createMelon } from "melon-db";
+import { createMelon } from "@alexmitchell/melondb";
 
 // Register every table in these app-wide definitions.
 
@@ -390,7 +390,7 @@ createMelon({
 When you need JSON without WatermelonDB meta (`_status`, `_changed`):
 
 ```ts
-import { cleanRow } from "melon-db";
+import { cleanRow } from "@alexmitchell/melondb";
 
 const plain = cleanRow()(note);
 // or merge extra fields:
@@ -400,7 +400,7 @@ const withUser = cleanRow({ user_id: userId })(note);
 For debug logging of model instances (circular refs):
 
 ```ts
-import { sanitizeCircular } from "melon-db";
+import { sanitizeCircular } from "@alexmitchell/melondb";
 
 console.log(JSON.stringify(sanitizeCircular(note)));
 ```
@@ -469,7 +469,7 @@ npm install uuid react-native-get-random-values
 ```ts
 import "react-native-get-random-values"; // must run before uuid, polyfills crypto.getRandomValues on React Native
 import { v7 as uuidv7 } from "uuid";
-import { createMelon } from "melon-db";
+import { createMelon } from "@alexmitchell/melondb";
 
 export const melon = createMelon<TableModels, TableData>({
   // ...schema
