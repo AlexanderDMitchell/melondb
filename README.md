@@ -45,13 +45,13 @@ const noteId = await database.write(async () => {
 });
 ```
 
-WatermelonDB requires each field to be assigned manually. TypeScript can catch a wrong type when it is assigned to a typed model property, but it does not check `draft` as a complete `notes` payload at the database call. A missing assignment is easy to overlook, and the `"notes"` string is not tied to the `NoteModel` type argument.
-
 Once [configured](#setup), **MelonDB** reduces the same operation to:
 
 ```ts
 const noteId = await melon.insert("notes", draft);
 ```
+
+WatermelonDB requires each field to be assigned manually. TypeScript can catch a wrong type when it is assigned to a typed model property, but it does not check `draft` as a complete `notes` payload at the database call. A missing assignment is easy to overlook, and the `"notes"` string is not tied to the `NoteModel` type argument.
 
 MelonDB uses `"notes"` to infer `TableData["notes"]`, then checks `draft` against it. A missing required property or a value with the wrong type—such as `body: 123`—causes a TypeScript error at the `insert` call. An unknown table name is rejected too.
 
