@@ -1,7 +1,7 @@
 {
   "name": "melon-db",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "Typed helpers for WatermelonDB: less write() boilerplate, safer collection access, safer database resets.",
   "license": "MIT",
   "author": "Alzen",
